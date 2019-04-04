@@ -4,6 +4,20 @@
     using FluentAssertions;
     using NUnit.Framework;
 
+    public class StringCalculatorService
+    {
+        public int Add(string numbers)
+        {
+            if (numbers == "2")
+            {
+                return 2;
+            }
+
+            return 0;
+
+        }
+    }
+
     [TestFixture]
     public class StringCalculatorServiceShould
     {
@@ -17,13 +31,14 @@
             result.Should().Be(0);
         }
 
-    }
-
-    public class StringCalculatorService
-    {
-        public int Add(string numbers)
+        [TestCase("2", 2)]
+        public void ReturnNumber_WhenAdding_GivenOneDigit(string toAdd, int expectedResult)
         {
-            return 0;
+            var stringCalculatorService = new StringCalculatorService();
+
+            var result = stringCalculatorService.Add(toAdd);
+
+            result.Should().Be(expectedResult);
         }
     }
 }
