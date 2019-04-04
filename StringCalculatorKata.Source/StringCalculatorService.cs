@@ -6,22 +6,7 @@ namespace StringCalculatorKata.Source
     {
         public int Add(string numbers)
         {
-            if (numbers == "2,3")
-            {
-                var first = numbers.Split(',').First();
-                var second = numbers.Split(',').Last();
-
-                return int.Parse(first) + int.Parse(second);
-            }
-
-            if (numbers == "2,100")
-            {
-                var first = numbers.Split(',').First();
-                var second = numbers.Split(',').Last();
-
-                return int.Parse(first) + int.Parse(second);
-            }
-            if (numbers == "2,101")
+            if (numbers.Split(',').Count() == 2)
             {
                 var first = numbers.Split(',').First();
                 var second = numbers.Split(',').Last();
