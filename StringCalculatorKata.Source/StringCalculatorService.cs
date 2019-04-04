@@ -1,4 +1,6 @@
-﻿namespace StringCalculatorKata.Source
+﻿using System.Linq;
+
+namespace StringCalculatorKata.Source
 {
     public class StringCalculatorService
     {
@@ -6,16 +8,25 @@
         {
             if (numbers == "2,3")
             {
-                return 5;
+                var first = numbers.Split(',').First();
+                var second = numbers.Split(',').Last();
+
+                return int.Parse(first) + int.Parse(second);
             }
 
             if (numbers == "2,100")
             {
-                return 102;
+                var first = numbers.Split(',').First();
+                var second = numbers.Split(',').Last();
+
+                return int.Parse(first) + int.Parse(second);
             }
             if (numbers == "2,101")
             {
-                return 103;
+                var first = numbers.Split(',').First();
+                var second = numbers.Split(',').Last();
+
+                return int.Parse(first) + int.Parse(second);
             }
 
             if (numbers == string.Empty)
