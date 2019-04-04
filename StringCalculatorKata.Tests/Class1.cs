@@ -1,22 +1,8 @@
 ﻿namespace StringCalculatorKata.Tests
 {
-    using System;
-    using FluentAssertions;
     using NUnit.Framework;
-
-    public class StringCalculatorService
-    {
-        public int Add(string numbers)
-        {
-            if (numbers == "2")
-            {
-                return 2;
-            }
-
-            return 0;
-
-        }
-    }
+    using FluentAssertions;
+    using Source;
 
     [TestFixture]
     public class StringCalculatorServiceShould
@@ -32,6 +18,7 @@
         }
 
         [TestCase("2", 2)]
+        [TestCase("3", 3)]
         public void ReturnNumber_WhenAdding_GivenOneDigit(string toAdd, int expectedResult)
         {
             var stringCalculatorService = new StringCalculatorService();
