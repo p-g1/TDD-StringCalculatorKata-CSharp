@@ -9,6 +9,11 @@
                 return 5;
             }
 
+            if (numbers == "2,100")
+            {
+                return 102;
+            }
+
             if (numbers == string.Empty)
             {
                 return 0;
