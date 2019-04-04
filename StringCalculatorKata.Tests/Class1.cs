@@ -31,6 +31,7 @@
 
         [TestCase("2,3", 5)]
         [TestCase("2,100", 102)]
+        [TestCase("2,101", 103)]
         public void ReturnNumber_WhenAdding_GivenTwoDigits(string toAdd, int expectedResult)
         {
             new StringCalculatorService()
