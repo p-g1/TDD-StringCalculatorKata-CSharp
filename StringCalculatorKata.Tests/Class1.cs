@@ -19,6 +19,7 @@
 
         [TestCase("2", 2)]
         [TestCase("3", 3)]
+        [TestCase("99", 99)]
         public void ReturnNumber_WhenAdding_GivenOneDigit(string toAdd, int expectedResult)
         {
             var stringCalculatorService = new StringCalculatorService();

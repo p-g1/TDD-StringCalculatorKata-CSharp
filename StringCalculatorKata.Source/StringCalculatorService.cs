@@ -4,18 +4,12 @@
     {
         public int Add(string numbers)
         {
-            if (numbers == "2")
+            if (numbers == "")
             {
-                return 2;
+                return 0;
             }
 
-            if (numbers == "3")
-            {
-                return 3;
-            }
-
-            return 0;
-
+            return int.Parse(numbers);
         }
     }
 }
