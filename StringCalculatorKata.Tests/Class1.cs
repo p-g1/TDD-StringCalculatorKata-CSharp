@@ -28,5 +28,14 @@
 
             result.Should().Be(expectedResult);
         }
+
+        [TestCase("2,3", 5)]
+
+        public void ReturnNumber_WhenAdding_GivenTwoDigits(string toAdd, int expectedResult)
+        {
+            new StringCalculatorService()
+                .Add(toAdd)
+                .Should().Be(expectedResult);
+        }
     }
 }
