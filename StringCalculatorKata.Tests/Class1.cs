@@ -38,5 +38,14 @@
                 .Add(toAdd)
                 .Should().Be(expectedResult);
         }
+
+        [TestCase("2,3,1000", 1005)]
+        public void ReturnNumber_WhenAdding_GivenThreeDigits(string toAdd, int expectedResult)
+        {
+            new StringCalculatorService()
+                .Add(toAdd)
+                .Should().Be(expectedResult);
+        }
+
     }
 }
