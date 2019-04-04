@@ -8,5 +8,6 @@ namespace StringCalculatorKata.Source
 {
     public class Class1
     {
+        
     }
 }
