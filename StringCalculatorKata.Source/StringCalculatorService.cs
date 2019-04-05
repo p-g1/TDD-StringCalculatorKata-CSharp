@@ -6,21 +6,33 @@ namespace StringCalculatorKata.Source
     {
         public int Add(string numbers)
         {
-            if (numbers.Split(',').Count() == 2)
+            var splitNumbers = numbers.Split(',');
+
+            if (splitNumbers.Count() == 2)
             {
-                var first = numbers.Split(',').First();
-                var second = numbers.Split(',').Last();
+                var first = splitNumbers.First();
+                var second = splitNumbers.Last();
 
                 return int.Parse(first) + int.Parse(second);
             }
 
-            if (numbers.Split(',').Count() == 3)
+            if (splitNumbers.Count() == 3)
             {
-                var first = numbers.Split(',').First();
-                var second = numbers.Split(',')[1];
-                var third = numbers.Split(',').Last();
+                var first = splitNumbers.First();
+                var second = splitNumbers[1];
+                var third = splitNumbers.Last();
 
                 return int.Parse(first) + int.Parse(second) + int.Parse(third);
+            }
+
+            if (splitNumbers.Count() == 4)
+            {
+                var first = splitNumbers.First();
+                var second = splitNumbers[1];
+                var third = splitNumbers[2];
+                var fourth = splitNumbers.Last();
+
+                return int.Parse(first) + int.Parse(second) + int.Parse(third) + int.Parse(fourth);
             }
 
             if (numbers == string.Empty)

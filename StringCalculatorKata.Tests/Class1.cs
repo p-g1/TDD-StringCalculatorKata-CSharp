@@ -1,4 +1,6 @@
-﻿namespace StringCalculatorKata.Tests
+﻿using System;
+
+namespace StringCalculatorKata.Tests
 {
     using NUnit.Framework;
     using FluentAssertions;
@@ -40,7 +42,16 @@
         }
 
         [TestCase("2,3,1000", 1005)]
+        [TestCase("4,8,90", 102)]
         public void ReturnNumber_WhenAdding_GivenThreeDigits(string toAdd, int expectedResult)
+        {
+            new StringCalculatorService()
+                .Add(toAdd)
+                .Should().Be(expectedResult);
+        }
+
+        [TestCase("1,2,4,5", 12)]
+        public void ReturnNumber_WhenAdding_GivenFourDigits(string toAdd, int expectedResult)
         {
             new StringCalculatorService()
                 .Add(toAdd)
